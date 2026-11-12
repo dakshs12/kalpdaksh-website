@@ -44,22 +44,101 @@ h1, h2, h3, h4, .font-serif {
 }
 
 section {
-  scroll-margin-top: 72px;
+  scroll-margin-top: 76px;
 }
 
 @media (max-width: 768px) {
   section {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 110px;
   }
 }
 
-/* Reduced motion preferences */
+/* ---------- Continuous Marquee Carousel ---------- */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 42s linear infinite;
+  will-change: transform;
+}
+
+.marquee-wrapper:hover .marquee-track,
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Touch-scrollable on mobile devices */
+@media (max-width: 768px) {
+  .marquee-wrapper {
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .marquee-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ---------- Reduced motion preferences ---------- */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
   }
+
+  /* Parallax backgrounds become static */
+  .heritage-bg,
+  .interstitial-bg,
   .parallax-layer {
     inset: 0 !important;
     transform: none !important;
+  }
+
+  /* Marquee carousel reverts to a clean static grid */
+  .marquee-wrapper {
+    overflow: visible !important;
+  }
+  .marquee-fade {
+    display: none !important;
+  }
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+    display: block !important;
+    width: 100% !important;
+  }
+  .marquee-group:not(.marquee-duplicate) {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    width: 100% !important;
+    gap: 1rem !important;
+    padding-right: 0 !important;
+  }
+  @media (min-width: 640px) {
+    .marquee-group:not(.marquee-duplicate) {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+  }
+  @media (min-width: 1024px) {
+    .marquee-group:not(.marquee-duplicate) {
+      grid-template-columns: repeat(5, 1fr) !important;
+    }
+  }
+  .marquee-duplicate {
+    display: none !important;
   }
 }

@@ -53,7 +53,19 @@ export default function GSAPAnimations() {
         },
       });
 
-      // 3. Subtle reveals on scroll for content sections
+      // 3. CottonConnect-style interstitial parallax (moves slower than scroll)
+      gsap.to(".interstitial-bg", {
+        yPercent: 12,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#interstitial",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      // 4. Subtle reveals on scroll for content sections
       const reveals = gsap.utils.toArray<HTMLElement>(".reveal");
       reveals.forEach((element) => {
         gsap.fromTo(
