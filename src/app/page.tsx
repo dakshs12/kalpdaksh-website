@@ -1,157 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import GSAPAnimations from "@/components/GSAPAnimations";
-
-interface Mill {
-  name: string;
-  logo: string;
-  width: number;
-  height: number;
-  isSpecial?: boolean;
-}
-
-const MILLS: Mill[] = [
-  { name: "Welspun Living", logo: "/assets/mills/welspun.png", width: 140, height: 48 },
-  { name: "Vardhman", logo: "/assets/mills/vardhman.png", width: 120, height: 48 },
-  { name: "Trident Group", logo: "/assets/mills/trident.png", width: 130, height: 48 },
-  { name: "Alok Industries", logo: "/assets/mills/alok.png", width: 140, height: 48 },
-  { name: "Sintex Yarns", logo: "/assets/mills/sintex.png", width: 120, height: 48 },
-  { name: "RSWM Limited", logo: "/assets/mills/rswm.png", width: 130, height: 48 },
-  { name: "LNJ Bhilwara Group", logo: "/assets/mills/lnj.png", width: 130, height: 48 },
-  { name: "Pratibha Syntex", logo: "/assets/mills/pratibha.png", width: 140, height: 44 },
-  { name: "Arvind Limited", logo: "/assets/mills/arvind.png", width: 135, height: 46 },
-  { name: "and others across India", logo: "", width: 0, height: 0, isSpecial: true },
-];
-
-function MillCard({ mill }: { mill: Mill }) {
-  if (mill.isSpecial) {
-    return (
-      <div className="w-56 h-28 bg-[#f6f1e8]/70 border-2 border-dashed border-[#1f2a44]/25 rounded-lg p-5 flex flex-col items-center justify-center text-center shrink-0 hover:border-[#b08d57] transition-all">
-        <span className="font-serif italic text-base text-[#1f2a44] font-medium">
-          and others
-        </span>
-        <span className="text-[11px] text-[#5f6b85] uppercase tracking-wider mt-0.5 font-medium">
-          across India
-        </span>
-      </div>
-    );
-  }
-
-  return (
-    <div className="w-56 h-28 bg-white border border-[#1f2a44]/15 rounded-lg p-5 flex items-center justify-center shrink-0 shadow-xs hover:border-[#b08d57]/70 hover:shadow-md transition-all group">
-      <Image
-        src={mill.logo}
-        alt={mill.name}
-        width={mill.width}
-        height={mill.height}
-        className="max-h-12 w-auto object-contain transition-transform group-hover:scale-105"
-      />
-    </div>
-  );
-}
+import Navbar from "@/components/Navbar";
+import MillsMarquee from "@/components/MillsMarquee";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#3a4356] selection:bg-[#b08d57] selection:text-[#1f2a44]">
+    <div className="min-h-screen flex flex-col bg-white text-[#3a4356] selection:bg-[#b08d57] selection:text-[#1f2a44] overflow-x-hidden">
       {/* GSAP ScrollTrigger client animations (skipped if prefers-reduced-motion is active) */}
       <GSAPAnimations />
 
-      {/* ---------- New Navbar Design: Executive Architectural Header with Gold Top Accent ---------- */}
-      <header className="sticky top-0 z-50 bg-[#18213a]/95 backdrop-blur-md border-t-2 border-[#b08d57] border-b border-[#3a4356]/40 transition-colors shadow-sm">
-        <div className="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between gap-4">
-          {/* Brand & Seal */}
-          <Link
-            href="#top"
-            className="flex items-center gap-3 text-white no-underline group shrink-0"
-            aria-label="Kalpdaksh Commotrade Home"
-          >
-            <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center overflow-hidden ring-1 ring-[#b08d57]/70 shadow-sm shrink-0 group-hover:ring-[#b08d57] transition-all">
-              <Image
-                src="/assets/logo.png"
-                alt="Kalpdaksh Commotrade seal logo"
-                width={36}
-                height={36}
-                className="w-full h-full object-contain p-0.5"
-                priority
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-lg tracking-wide text-[#f6f1e8] leading-tight">
-                Kalpdaksh{" "}
-                <span className="text-[#b08d57] font-serif font-normal italic">
-                  Commotrade
-                </span>
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#d9bc8a]/80 font-medium">
-                Central India Trade Desk
-              </span>
-            </div>
-          </Link>
+      {/* ---------- Responsive Executive Navbar ---------- */}
+      <Navbar />
 
-          {/* Desktop Nav Capsule */}
-          <nav
-            className="hidden md:flex items-center gap-1 bg-[#1f2a44]/80 border border-[#b08d57]/25 rounded-full px-4 py-1.5 backdrop-blur-sm shadow-inner"
-            aria-label="Main Navigation"
-          >
-            <Link
-              href="#about"
-              className="px-3 py-1 text-xs uppercase tracking-[0.14em] text-[#f6f1e8]/80 hover:text-white hover:bg-white/5 rounded-full transition-all"
-            >
-              About
-            </Link>
-            <Link
-              href="#heritage"
-              className="px-3 py-1 text-xs uppercase tracking-[0.14em] text-[#f6f1e8]/80 hover:text-white hover:bg-white/5 rounded-full transition-all"
-            >
-              Heritage
-            </Link>
-            <Link
-              href="#services"
-              className="px-3 py-1 text-xs uppercase tracking-[0.14em] text-[#f6f1e8]/80 hover:text-white hover:bg-white/5 rounded-full transition-all"
-            >
-              Services
-            </Link>
-            <Link
-              href="#mills"
-              className="px-3 py-1 text-xs uppercase tracking-[0.14em] text-[#f6f1e8]/80 hover:text-white hover:bg-white/5 rounded-full transition-all"
-            >
-              Mills
-            </Link>
-            <Link
-              href="#contact"
-              className="px-3 py-1 text-xs uppercase tracking-[0.14em] text-[#b08d57] hover:text-[#d9bc8a] hover:bg-[#b08d57]/10 rounded-full font-semibold transition-all"
-            >
-              Contact
-            </Link>
-          </nav>
-
-          {/* Direct CTA Button */}
-          <div className="flex items-center gap-3">
-            <Link
-              href="#contact"
-              className="inline-flex items-center gap-2 bg-[#b08d57] hover:bg-[#c09b67] text-[#1f2a44] font-semibold text-xs uppercase tracking-[0.14em] px-4 py-2 rounded-full transition-all shadow-xs shrink-0"
-            >
-              <span>Get in touch</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#1f2a44] animate-pulse" />
-            </Link>
-          </div>
-        </div>
-
-        {/* Mobile Horizontal Sub-Navigation */}
-        <div className="md:hidden border-t border-white/10 px-6 py-2 overflow-x-auto scrollbar-none">
-          <nav className="flex items-center justify-between min-w-[340px] text-[11px] uppercase tracking-[0.16em] text-[#f6f1e8]/80">
-            <Link href="#about" className="hover:text-white py-1">About</Link>
-            <Link href="#heritage" className="hover:text-white py-1">Heritage</Link>
-            <Link href="#services" className="hover:text-white py-1">Services</Link>
-            <Link href="#mills" className="hover:text-white py-1">Mills</Link>
-            <Link href="#contact" className="text-[#b08d57] font-semibold py-1">Contact</Link>
-          </nav>
-        </div>
-      </header>
-
-      <main id="top" className="flex-1">
+      <main id="top" className="flex-1 w-full">
         {/* ---------- Full-Viewport Hero ---------- */}
-        <section className="relative min-h-[calc(100vh-76px)] flex items-center bg-[#1f2a44] overflow-hidden">
+        <section className="relative min-h-[calc(100vh-65px)] flex items-center bg-[#1f2a44] overflow-hidden">
           {/* Hero background image */}
           <div
             className="absolute inset-0 bg-cover bg-[center_right_30%] md:bg-center"
@@ -329,31 +193,60 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ---------- CottonConnect-Style Interstitial Band ---------- */}
-        <section
-          id="interstitial"
-          className="relative overflow-hidden py-32 sm:py-40 bg-[#1f2a44] text-center flex items-center justify-center"
-        >
-          {/* Parallax background photo: moves slower than scroll */}
-          <div
-            className="interstitial-bg absolute inset-[-20%_0] bg-cover bg-center will-change-transform opacity-40"
-            style={{
-              backgroundImage: "url('/assets/cotton_interstitial.jpg')",
-            }}
-            aria-hidden="true"
-          />
+        {/* ---------- CottonConnect-Style Sequence: Text / Full-Width Cotton Photo Band / Text ---------- */}
+        <section className="bg-white">
+          {/* Step 1: Pre-Band Narrative Text */}
+          <div className="max-w-4xl mx-auto px-6 pt-20 pb-12 text-center reveal">
+            <p className="text-xs uppercase font-semibold tracking-[0.24em] text-[#b08d57] mb-3">
+              Origin &amp; Fiber Sourcing
+            </p>
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#1f2a44] font-semibold leading-tight mb-5">
+              Direct from the heart of India&rsquo;s cotton country.
+            </h2>
+            <p className="text-[#3a4356] text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+              From the fertile black-cotton soils of Madhya Pradesh, Gujarat, and Maharashtra,
+              we bridge farm-gate ginning with commercial spinning specifications.
+            </p>
+          </div>
 
-          {/* Refined trade-house gradient veil */}
+          {/* Step 2: Full-Width Cotton Photo Band (Clear, Natural, Subtle GSAP Parallax) */}
           <div
-            className="absolute inset-0 bg-gradient-to-r from-[#18213a]/90 via-[#1f2a44]/75 to-[#18213a]/90"
-            aria-hidden="true"
-          />
+            id="interstitial"
+            className="relative w-full h-[360px] sm:h-[480px] md:h-[540px] overflow-hidden flex items-center justify-center text-center"
+          >
+            {/* Natural cotton photo background with subtle GSAP parallax */}
+            <div
+              className="interstitial-bg absolute inset-[-15%_0] bg-cover bg-center will-change-transform"
+              style={{
+                backgroundImage: "url('/assets/cotton_interstitial.jpg')",
+              }}
+              aria-hidden="true"
+            />
 
-          {/* Interstitial overlay content */}
-          <div className="relative max-w-4xl mx-auto px-6 reveal">
-            <div className="w-12 h-0.5 bg-[#b08d57] mx-auto mb-6" />
-            <p className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#f6f1e8] font-normal italic tracking-wide leading-snug drop-shadow-sm">
-              &ldquo;Connecting Central India&rsquo;s harvest with the nation&rsquo;s finest spinning mills.&rdquo;
+            {/* Soft, light vignette - NO compounding dark black overlay! Cotton is clearly visible! */}
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-[#18213a]/55 via-transparent to-[#18213a]/30 pointer-events-none"
+              aria-hidden="true"
+            />
+
+            {/* Floating readable caption card */}
+            <div className="relative max-w-2xl mx-auto px-6 reveal">
+              <div className="bg-[#18213a]/80 backdrop-blur-md border border-[#b08d57]/50 rounded-xl px-6 sm:px-10 py-6 sm:py-8 shadow-2xl">
+                <span className="text-[11px] uppercase tracking-[0.22em] text-[#d9bc8a] font-semibold block mb-2">
+                  Central India Harvest
+                </span>
+                <p className="font-serif text-xl sm:text-2xl md:text-3xl text-[#f6f1e8] font-normal italic leading-snug">
+                  &ldquo;Rigorous lot inspection for staple length, strength, and micronaire before a single bale moves.&rdquo;
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 3: Post-Band Connecting Text */}
+          <div className="max-w-4xl mx-auto px-6 pt-12 pb-20 text-center reveal">
+            <p className="text-[#5f6b85] text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+              Every lot is certified, weighed, and verified on-site. Our brokerage desk ensures
+              a seamless transition from ginner yards to mill warehouses with complete commercial accountability.
             </p>
             <div className="w-12 h-0.5 bg-[#b08d57] mx-auto mt-6" />
           </div>
@@ -452,32 +345,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Marquee Carousel Container */}
+          {/* Marquee Carousel Container (All 9 Mills in Continuous Row, 'and others' outside) */}
           <div className="reveal relative w-full">
-            {/* Desktop Gradient Edge Masks */}
-            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-white to-transparent z-10 marquee-fade" />
-            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-white to-transparent z-10 marquee-fade" />
-
-            <div className="marquee-wrapper px-6">
-              <div className="marquee-track">
-                {/* Primary Group */}
-                <div className="marquee-group flex gap-5 pr-5 shrink-0">
-                  {MILLS.map((mill, idx) => (
-                    <MillCard key={`mill-1-${idx}`} mill={mill} />
-                  ))}
-                </div>
-
-                {/* Duplicated Group for Infinite Loop */}
-                <div
-                  className="marquee-group marquee-duplicate flex gap-5 pr-5 shrink-0"
-                  aria-hidden="true"
-                >
-                  {MILLS.map((mill, idx) => (
-                    <MillCard key={`mill-2-${idx}`} mill={mill} />
-                  ))}
-                </div>
-              </div>
-            </div>
+            <MillsMarquee />
           </div>
         </section>
 
