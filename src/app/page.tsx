@@ -193,62 +193,43 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ---------- CottonConnect-Style Sequence: Text / Full-Width Cotton Photo Band / Text ---------- */}
-        <section className="bg-white">
-          {/* Step 1: Pre-Band Narrative Text */}
-          <div className="max-w-4xl mx-auto px-6 pt-20 pb-12 text-center reveal">
-            <p className="text-xs uppercase font-semibold tracking-[0.24em] text-[#b08d57] mb-3">
-              Origin &amp; Fiber Sourcing
-            </p>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#1f2a44] font-semibold leading-tight mb-5">
-              Direct from the heart of India&rsquo;s cotton country.
-            </h2>
-            <p className="text-[#3a4356] text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-              From the fertile black-cotton soils of Madhya Pradesh, Gujarat, and Maharashtra,
-              we bridge farm-gate ginning with commercial spinning specifications.
-            </p>
-          </div>
-
-          {/* Step 2: Full-Width Cotton Photo Band (Clear, Natural, Subtle GSAP Parallax) */}
+        {/* ---------- Origin & Fiber Sourcing (CottonConnect-style pinned scroll moment) ---------- */}
+        <section
+          id="origin"
+          className="relative z-10 w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#10172a]"
+        >
+          {/* Pinned full-bleed cotton background layer with dark overlay */}
           <div
-            id="interstitial"
-            className="relative w-full h-[360px] sm:h-[480px] md:h-[540px] overflow-hidden flex items-center justify-center text-center"
+            className="origin-bg-wrapper absolute inset-0 w-full h-full overflow-hidden pointer-events-none"
+            aria-hidden="true"
           >
-            {/* Natural cotton photo background with subtle GSAP parallax */}
             <div
-              className="interstitial-bg absolute inset-[-15%_0] bg-cover bg-center will-change-transform"
+              className="origin-bg-image absolute inset-0 w-full h-full bg-cover bg-center will-change-transform"
               style={{
                 backgroundImage: "url('/assets/cotton_interstitial.jpg')",
               }}
-              aria-hidden="true"
             />
-
-            {/* Soft, light vignette - NO compounding dark black overlay! Cotton is clearly visible! */}
-            <div
-              className="absolute inset-0 bg-gradient-to-t from-[#18213a]/55 via-transparent to-[#18213a]/30 pointer-events-none"
-              aria-hidden="true"
-            />
-
-            {/* Floating readable caption card */}
-            <div className="relative max-w-2xl mx-auto px-6 reveal">
-              <div className="bg-[#18213a]/80 backdrop-blur-md border border-[#b08d57]/50 rounded-xl px-6 sm:px-10 py-6 sm:py-8 shadow-2xl">
-                <span className="text-[11px] uppercase tracking-[0.22em] text-[#d9bc8a] font-semibold block mb-2">
-                  Central India Harvest
-                </span>
-                <p className="font-serif text-xl sm:text-2xl md:text-3xl text-[#f6f1e8] font-normal italic leading-snug">
-                  &ldquo;Rigorous lot inspection for staple length, strength, and micronaire before a single bale moves.&rdquo;
-                </p>
-              </div>
-            </div>
+            {/* Dark overlay fading from 0 to about 0.8 opacity */}
+            <div className="origin-overlay absolute inset-0 bg-[#0b101d] pointer-events-none" />
           </div>
 
-          {/* Step 3: Post-Band Connecting Text */}
-          <div className="max-w-4xl mx-auto px-6 pt-12 pb-20 text-center reveal">
-            <p className="text-[#5f6b85] text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+          {/* Centered narrative copy in white over the image */}
+          <div className="relative z-10 max-w-4xl mx-auto px-6 py-20 sm:py-28 text-center">
+            <p className="text-xs uppercase font-semibold tracking-[0.24em] text-[#d9bc8a] mb-3">
+              Origin &amp; Fiber Sourcing
+            </p>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-semibold leading-tight mb-6 drop-shadow-sm">
+              Direct from the heart of India&rsquo;s cotton country.
+            </h2>
+            <p className="text-[#f6f1e8] text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-6 drop-shadow-sm font-light">
+              From the fertile black-cotton soils of Madhya Pradesh, Gujarat, and Maharashtra,
+              we bridge farm-gate ginning with commercial spinning specifications.
+            </p>
+            <p className="text-[#f6f1e8]/90 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto drop-shadow-sm font-light">
               Every lot is certified, weighed, and verified on-site. Our brokerage desk ensures
               a seamless transition from ginner yards to mill warehouses with complete commercial accountability.
             </p>
-            <div className="w-12 h-0.5 bg-[#b08d57] mx-auto mt-6" />
+            <div className="w-12 h-0.5 bg-[#b08d57] mx-auto mt-8" />
           </div>
         </section>
 

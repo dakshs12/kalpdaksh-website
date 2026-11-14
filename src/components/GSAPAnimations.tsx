@@ -53,17 +53,42 @@ export default function GSAPAnimations() {
         },
       });
 
-      // 3. CottonConnect-style interstitial parallax (moves slower than scroll)
-      gsap.to(".interstitial-bg", {
-        yPercent: 12,
-        ease: "none",
-        scrollTrigger: {
-          trigger: "#interstitial",
-          start: "top bottom",
+      // 3. Origin & Fiber Sourcing: CottonConnect-style pinned scroll moment
+      if (document.querySelector("#origin")) {
+        // Pin the cotton section so the next section (#services) slides up over it
+        ScrollTrigger.create({
+          trigger: "#origin",
+          start: "top top",
           end: "bottom top",
-          scrub: true,
-        },
-      });
+          pin: true,
+          pinSpacing: false,
+        });
+
+        // Animate background image from scale 1.4 down to 1.0 (scrubbed linearly to scroll)
+        // and fade dark overlay from 0 to about 0.8 opacity over the same range
+        const originTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#origin",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+
+        originTimeline
+          .fromTo(
+            ".origin-bg-image",
+            { scale: 1.4, transformOrigin: "center center" },
+            { scale: 1.0, ease: "none" },
+            0
+          )
+          .fromTo(
+            ".origin-overlay",
+            { opacity: 0 },
+            { opacity: 0.8, ease: "none" },
+            0
+          );
+      }
 
       // 4. Subtle reveals on scroll for content sections
       const reveals = gsap.utils.toArray<HTMLElement>(".reveal");

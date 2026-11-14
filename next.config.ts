@@ -4,6 +4,10 @@ const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  allowedDevOrigins: [
+    "criticism-others-daily-extraction.trycloudflare.com",
+    "*.trycloudflare.com",
+  ],
   turbopack: {
     rules: {
       "*.css": {

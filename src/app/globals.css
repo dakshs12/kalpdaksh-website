@@ -57,6 +57,31 @@ section {
   }
 }
 
+/* Stacking contexts so the next section (#services) slides up over the pinned #origin section */
+#heritage {
+  position: relative;
+  z-index: 20;
+}
+
+#origin {
+  position: relative;
+  z-index: 10;
+}
+
+#services {
+  position: relative;
+  z-index: 20;
+}
+
+.origin-bg-image {
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.origin-overlay {
+  opacity: 0;
+}
+
 /* ---------- Continuous Marquee Carousel ---------- */
 @keyframes marquee-scroll {
   0% {
@@ -113,6 +138,15 @@ section {
   .parallax-layer {
     inset: 0 !important;
     transform: none !important;
+  }
+
+  /* Origin section: scale 1 with overlay applied, no scroll animation */
+  .origin-bg-image {
+    transform: scale(1) !important;
+  }
+
+  .origin-overlay {
+    opacity: 0.8 !important;
   }
 
   /* Marquee carousel reverts to a clean static grid */
