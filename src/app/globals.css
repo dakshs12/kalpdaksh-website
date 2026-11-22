@@ -57,7 +57,7 @@ section {
   }
 }
 
-/* Stacking contexts so the next section (#services) slides up over the pinned #origin section */
+/* Stacking contexts so subsequent sections slide up over the pinned #origin section */
 #heritage {
   position: relative;
   z-index: 20;
@@ -68,7 +68,10 @@ section {
   z-index: 10;
 }
 
-#services {
+#services,
+#mills,
+#contact,
+footer {
   position: relative;
   z-index: 20;
 }

@@ -62,6 +62,12 @@ export default function GSAPAnimations() {
           end: "bottom top",
           pin: true,
           pinSpacing: false,
+          onLeave: () => {
+            gsap.set("#origin", { autoAlpha: 0 });
+          },
+          onEnterBack: () => {
+            gsap.set("#origin", { autoAlpha: 1 });
+          },
         });
 
         // Animate background image from scale 1.4 down to 1.0 (scrubbed linearly to scroll)

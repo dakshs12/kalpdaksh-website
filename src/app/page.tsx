@@ -15,32 +15,32 @@ export default function Home() {
 
       <main id="top" className="flex-1 w-full">
         {/* ---------- Full-Viewport Hero ---------- */}
-        <section className="relative min-h-[calc(100vh-65px)] flex items-center bg-[#1f2a44] overflow-hidden">
+        <section className="relative min-h-screen flex items-center bg-[#11100e] overflow-hidden pt-28 sm:pt-32 md:pt-36 pb-20">
           {/* Hero background image */}
           <div
             className="absolute inset-0 bg-cover bg-[center_right_30%] md:bg-center"
             style={{
-              backgroundImage: "url('/assets/hero.jpg')",
+              backgroundImage: "url('/assets/hero.png')",
             }}
             aria-hidden="true"
           />
 
-          {/* Deep trade-house gradient overlay for maximum legibility */}
+          {/* Warm neutral scrim overlay (no navy blue tint) for high legibility while letting natural sunset and cotton tones shine */}
           <div
-            className="absolute inset-0 bg-gradient-to-r from-[#1f2a44] via-[#1f2a44]/90 sm:via-[#1f2a44]/80 to-[#1f2a44]/40"
+            className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/30 sm:from-black/75 sm:via-black/45 sm:to-transparent"
             aria-hidden="true"
           />
 
           {/* Hero Content */}
           <div className="relative max-w-6xl mx-auto px-6 py-24 sm:py-32 w-full">
             <div className="max-w-2xl">
-              <p className="hero-kicker text-xs uppercase font-semibold tracking-[0.24em] text-[#d9bc8a] mb-5">
+              <p className="hero-kicker text-xs uppercase font-semibold tracking-[0.24em] text-[#d9bc8a] mb-5 drop-shadow-xs">
                 Cotton brokerage &amp; commission &middot; Indore, India
               </p>
-              <h1 className="hero-headline font-serif text-4xl sm:text-5xl md:text-6xl text-[#f6f1e8] font-semibold leading-[1.08] tracking-tight mb-6">
+              <h1 className="hero-headline font-serif text-4xl sm:text-5xl md:text-6xl text-[#f6f1e8] font-semibold leading-[1.08] tracking-tight mb-6 drop-shadow-sm">
                 Good cotton finds the right mill.
               </h1>
-              <p className="hero-explainer text-lg sm:text-xl text-[#f6f1e8]/90 font-light leading-relaxed max-w-xl mb-10">
+              <p className="hero-explainer text-lg sm:text-xl text-[#f6f1e8]/90 font-light leading-relaxed max-w-xl mb-10 drop-shadow-xs">
                 Kalpdaksh Commotrade Pvt Ltd is a cotton brokerage and
                 commission house in Indore, Madhya Pradesh, sourcing cotton for
                 leading mills and serving trade partners overseas.
@@ -48,7 +48,7 @@ export default function Home() {
               <div>
                 <Link
                   href="#contact"
-                  className="hero-cta inline-flex items-center justify-center bg-[#b08d57] hover:bg-[#c09b67] text-[#1f2a44] font-semibold text-xs uppercase tracking-[0.14em] px-8 py-4 rounded transition-colors shadow-md hover:shadow-lg"
+                  className="hero-cta inline-flex items-center justify-center bg-[#b08d57] hover:bg-[#c09b67] text-[#1a140e] font-semibold text-xs uppercase tracking-[0.14em] px-8 py-4 rounded transition-colors shadow-md hover:shadow-lg"
                 >
                   Get in touch
                 </Link>
@@ -206,35 +206,38 @@ export default function Home() {
             <div
               className="origin-bg-image absolute inset-0 w-full h-full bg-cover bg-center will-change-transform"
               style={{
-                backgroundImage: "url('/assets/cotton_interstitial.jpg')",
+                backgroundImage: "url('/assets/mp_handshake.png')",
               }}
             />
             {/* Dark overlay fading from 0 to about 0.8 opacity */}
             <div className="origin-overlay absolute inset-0 bg-[#0b101d] pointer-events-none" />
           </div>
 
-          {/* Centered narrative copy in white over the image */}
-          <div className="relative z-10 max-w-4xl mx-auto px-6 py-20 sm:py-28 text-center">
-            <p className="text-xs uppercase font-semibold tracking-[0.24em] text-[#d9bc8a] mb-3">
-              Origin &amp; Fiber Sourcing
-            </p>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-semibold leading-tight mb-6 drop-shadow-sm">
-              Direct from the heart of India&rsquo;s cotton country.
-            </h2>
-            <p className="text-[#f6f1e8] text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-6 drop-shadow-sm font-light">
-              From the fertile black-cotton soils of Madhya Pradesh, Gujarat, and Maharashtra,
-              we bridge farm-gate ginning with commercial spinning specifications.
-            </p>
-            <p className="text-[#f6f1e8]/90 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto drop-shadow-sm font-light">
-              Every lot is certified, weighed, and verified on-site. Our brokerage desk ensures
-              a seamless transition from ginner yards to mill warehouses with complete commercial accountability.
-            </p>
-            <div className="w-12 h-0.5 bg-[#b08d57] mx-auto mt-8" />
+          {/* Centered narrative copy in white over the image with translucent frosted container */}
+          <div className="relative z-10 max-w-3xl mx-auto px-6 py-16 sm:py-20 text-center">
+            <div className="bg-[#10172a]/80 backdrop-blur-md border border-[#b08d57]/30 rounded-2xl p-8 sm:p-12 md:p-14 shadow-2xl">
+              <p className="text-xs uppercase font-semibold tracking-[0.24em] text-[#d9bc8a] mb-4">
+                Origin &amp; Fiber Sourcing
+              </p>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-semibold leading-tight mb-6 drop-shadow-sm text-balance">
+                Direct from the heart of <br className="hidden sm:inline" />
+                India&rsquo;s cotton country.
+              </h2>
+              <p className="text-[#f6f1e8] text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-5 drop-shadow-sm font-light">
+                From the fertile black-cotton soils of Madhya Pradesh, Gujarat, and Maharashtra,
+                we bridge farm-gate ginning with commercial spinning specifications.
+              </p>
+              <p className="text-[#f6f1e8]/85 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto drop-shadow-sm font-light">
+                Every lot is certified, weighed, and verified on-site. Our brokerage desk ensures
+                a seamless transition from ginner yards to mill warehouses with complete commercial accountability.
+              </p>
+              <div className="w-12 h-0.5 bg-[#b08d57] mx-auto mt-8" />
+            </div>
           </div>
         </section>
 
         {/* ---------- Services Section ---------- */}
-        <section id="services" className="py-24 sm:py-28 bg-[#f6f1e8]">
+        <section id="services" className="relative z-20 py-24 sm:py-28 bg-[#f6f1e8]">
           <div className="max-w-6xl mx-auto px-6">
             <div className="reveal max-w-2xl mb-14">
               <p className="text-xs uppercase font-semibold tracking-[0.24em] text-[#b08d57] mb-3">
@@ -260,7 +263,16 @@ export default function Home() {
                 </h3>
                 <p className="text-sm sm:text-base text-[#5f6b85] leading-relaxed">
                   Systematic daily cotton market reports and rate updates, shared
-                  with clients on WhatsApp and LinkedIn.
+                  with clients on{" "}
+                  <a
+                    href="https://walink.me/6coh00"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#1f2a44] font-medium underline underline-offset-4 decoration-[#b08d57] hover:text-[#b08d57] transition-colors"
+                  >
+                    WhatsApp
+                  </a>{" "}
+                  and LinkedIn.
                 </p>
               </article>
 
@@ -310,7 +322,7 @@ export default function Home() {
         </section>
 
         {/* ---------- Mills Section: Continuous Horizontal Marquee Carousel ---------- */}
-        <section id="mills" className="py-24 sm:py-28 bg-white overflow-hidden">
+        <section id="mills" className="relative z-20 py-24 sm:py-28 bg-white overflow-hidden">
           <div className="max-w-6xl mx-auto px-6 mb-12">
             <div className="reveal max-w-3xl">
               <p className="text-xs uppercase font-semibold tracking-[0.24em] text-[#b08d57] mb-3">
@@ -333,9 +345,9 @@ export default function Home() {
         </section>
 
         {/* ---------- Contact Section ---------- */}
-        <section id="contact" className="py-24 sm:py-28 bg-[#1f2a44] text-[#f6f1e8]">
+        <section id="contact" className="relative z-20 py-24 sm:py-28 bg-[#1f2a44] text-[#f6f1e8]">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="reveal max-w-2xl">
+            <div className="reveal max-w-3xl">
               <p className="text-xs uppercase font-semibold tracking-[0.24em] text-[#d9bc8a] mb-3">
                 Get in touch
               </p>
@@ -346,12 +358,56 @@ export default function Home() {
                 Indore, Madhya Pradesh, India
               </p>
 
-              {/* TODO: Add phone/WhatsApp number and LinkedIn URL once confirmed */}
-              <div className="text-xs text-[#d9bc8a]/80 italic mt-4 mb-8">
+              <div className="text-xs text-[#d9bc8a]/80 italic mt-2 mb-8">
                 Direct trade desk inquiries and mill orders are serviced from Indore.
               </div>
 
-              <div className="pt-4">
+              {/* Direct Contact Channels */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mb-8">
+                {/* Mobile / Direct Call */}
+                <a
+                  href="tel:+919203825265"
+                  className="group flex items-center gap-4 p-5 rounded-xl bg-white/5 border border-white/10 hover:border-[#b08d57]/60 hover:bg-white/10 transition-all text-left"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-[#b08d57]/20 border border-[#b08d57]/40 flex items-center justify-center text-[#d9bc8a] group-hover:scale-105 group-hover:bg-[#b08d57] group-hover:text-[#1f2a44] transition-all shrink-0">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div className="min-w-0">
+                    <span className="block text-xs uppercase tracking-[0.18em] text-[#d9bc8a] font-medium mb-1">
+                      Direct Mobile / Trade Desk
+                    </span>
+                    <span className="block font-serif text-lg sm:text-xl text-white font-semibold tracking-wide truncate">
+                      +91 92038 25265
+                    </span>
+                  </div>
+                </a>
+
+                {/* WhatsApp */}
+                <a
+                  href="https://walink.me/6coh00"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-4 p-5 rounded-xl bg-white/5 border border-white/10 hover:border-[#25D366]/60 hover:bg-white/10 transition-all text-left"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-[#25D366]/20 border border-[#25D366]/40 flex items-center justify-center text-[#25D366] group-hover:scale-105 group-hover:bg-[#25D366] group-hover:text-white transition-all shrink-0">
+                    <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                    </svg>
+                  </div>
+                  <div className="min-w-0">
+                    <span className="block text-xs uppercase tracking-[0.18em] text-[#25D366] font-medium mb-1">
+                      WhatsApp Direct Desk
+                    </span>
+                    <span className="block font-serif text-lg sm:text-xl text-white font-semibold tracking-wide truncate">
+                      Chat on WhatsApp &rarr;
+                    </span>
+                  </div>
+                </a>
+              </div>
+
+              <div className="pt-2">
                 <Link
                   href="#top"
                   className="inline-flex items-center justify-center border border-[#f6f1e8]/40 hover:border-[#f6f1e8] hover:bg-white/10 text-[#f6f1e8] text-xs uppercase font-medium tracking-[0.14em] px-6 py-3 rounded transition-colors"
@@ -365,12 +421,29 @@ export default function Home() {
       </main>
 
       {/* ---------- Simple Footer ---------- */}
-      <footer className="bg-[#18213a] border-t border-white/10 py-6 text-center text-xs text-[#f6f1e8]/50 tracking-wider">
-        <div className="max-w-6xl mx-auto px-6">
+      <footer className="relative z-20 bg-[#18213a] border-t border-white/10 py-6 text-xs text-[#f6f1e8]/60 tracking-wider">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <p>
             &copy; 2026 Kalpdaksh Commotrade Pvt Ltd &middot; Indore, Madhya
             Pradesh
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-6 text-[#f6f1e8]/80">
+            <a
+              href="tel:+919203825265"
+              className="hover:text-white transition-colors flex items-center gap-1.5"
+            >
+              <span>+91 92038 25265</span>
+            </a>
+            <span className="text-white/20 hidden sm:inline">&middot;</span>
+            <a
+              href="https://walink.me/6coh00"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#25D366] hover:text-[#3ce37c] transition-colors font-medium flex items-center gap-1.5"
+            >
+              <span>WhatsApp Desk &rarr;</span>
+            </a>
+          </div>
         </div>
       </footer>
     </div>

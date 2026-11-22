@@ -1,18 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Heritage", href: "#heritage" },
+    { name: "Home", href: "#top" },
+    { name: "About Us", href: "#about" },
     { name: "Services", href: "#services" },
-    { name: "Mills", href: "#mills" },
-    { name: "Contact", href: "#contact" },
+    { name: "Mill Relationships", href: "#mills" },
+    { name: "Contact Us", href: "#contact" },
   ];
 
   const handleLinkClick = () => {
@@ -20,82 +30,68 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#18213a]/95 backdrop-blur-md border-t-2 border-[#b08d57] border-b border-[#3a4356]/40 transition-colors shadow-sm w-full">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
-        {/* Brand & Seal */}
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
+        scrolled
+          ? "bg-[#fdfbf7]/95 backdrop-blur-md shadow-xs border-b border-[#b08d57]/20 py-3.5 sm:py-4"
+          : "bg-transparent py-5 sm:py-6 md:py-7"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 flex items-center justify-between gap-6">
+        {/* Full Brandmark Logo - Increased Size */}
         <Link
           href="#top"
-          className="flex items-center gap-2.5 sm:gap-3 text-white no-underline group shrink-0 min-w-0"
+          className="flex items-center text-white no-underline group shrink min-w-0"
           aria-label="Kalpdaksh Commotrade Home"
         >
-          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white flex items-center justify-center overflow-hidden ring-1 ring-[#b08d57]/70 shadow-sm shrink-0 group-hover:ring-[#b08d57] transition-all">
-            <Image
-              src="/assets/logo.png"
-              alt="Kalpdaksh Commotrade seal logo"
-              width={36}
-              height={36}
-              className="w-full h-full object-contain p-0.5"
-              priority
-            />
-          </div>
-          <div className="flex flex-col min-w-0">
-            <span className="font-serif text-base sm:text-lg tracking-wide text-[#f6f1e8] leading-tight truncate">
-              Kalpdaksh{" "}
-              <span className="text-[#b08d57] font-serif font-normal italic">
-                Commotrade
-              </span>
-            </span>
-            <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#d9bc8a]/80 font-medium truncate">
-              Central India Trade Desk
-            </span>
-          </div>
+          <Image
+            src="/assets/full-logo.png"
+            alt="Kalpdaksh Commotrade Pvt Ltd"
+            width={320}
+            height={70}
+            className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-full object-contain transition-transform duration-300 hover:scale-[1.02]"
+            priority
+          />
         </Link>
 
-        {/* Desktop Nav Capsule (Hidden on mobile) */}
+        {/* Desktop Nav Links - Increased Size, Permanent Home Underline, Smooth Underline Hover Animation */}
         <nav
-          className="hidden md:flex items-center gap-1 bg-[#1f2a44]/80 border border-[#b08d57]/25 rounded-full px-4 py-1.5 backdrop-blur-sm shadow-inner shrink-0"
+          className="hidden lg:flex items-center gap-7 lg:gap-9 xl:gap-11 shrink-0"
           aria-label="Main Navigation"
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`px-3 py-1 text-xs uppercase tracking-[0.14em] rounded-full transition-all ${
-                link.name === "Contact"
-                  ? "text-[#b08d57] hover:text-[#d9bc8a] hover:bg-[#b08d57]/10 font-semibold"
-                  : "text-[#f6f1e8]/80 hover:text-white hover:bg-white/5"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isHome = link.name === "Home";
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`relative font-serif text-base sm:text-lg lg:text-[19px] tracking-normal transition-all py-1.5 whitespace-nowrap text-[#2a1e17] ${
+                  isHome
+                    ? "font-semibold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-[#b08d57]"
+                    : "font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-[#b08d57] after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-out motion-reduce:after:transition-none"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </nav>
 
-        {/* Right side controls: Desktop CTA & Mobile Actions */}
-        <div className="flex items-center gap-2 shrink-0">
-          {/* Get in touch button - perfectly scaled for all screens, never clipped */}
-          <Link
-            href="#contact"
-            className="inline-flex items-center gap-1.5 bg-[#b08d57] hover:bg-[#c09b67] text-[#1f2a44] font-semibold text-[11px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.14em] px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all shadow-xs shrink-0 whitespace-nowrap"
-          >
-            <span>Get in touch</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#1f2a44] animate-pulse" />
-          </Link>
-
-          {/* Compact Mobile Menu Toggle Button (Visible only on mobile) */}
+        {/* Mobile Hamburger Toggle Button */}
+        <div className="lg:hidden flex items-center shrink-0">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden w-8 h-8 flex items-center justify-center rounded border border-[#b08d57]/30 text-[#f6f1e8] hover:bg-white/10 transition-colors focus:outline-none focus:ring-1 focus:ring-[#b08d57]"
+            className="w-11 h-11 flex items-center justify-center rounded-xl border border-[#b08d57]/40 text-[#2a1e17] bg-white/60 backdrop-blur-sm hover:bg-[#b08d57]/20 transition-colors focus:outline-none focus:ring-2 focus:ring-[#b08d57]"
             aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
@@ -103,25 +99,51 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Compact Mobile Dropdown Menu */}
+      {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#18213a]/98 backdrop-blur-xl border-t border-white/10 border-b border-[#b08d57]/30 px-6 py-4 shadow-xl">
-          <nav className="flex flex-col gap-3" aria-label="Mobile Navigation">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={handleLinkClick}
-                className={`py-2 text-xs uppercase tracking-[0.16em] border-b border-white/5 transition-colors ${
-                  link.name === "Contact"
-                    ? "text-[#b08d57] font-semibold"
-                    : "text-[#f6f1e8]/85 hover:text-white"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+        <div className="lg:hidden bg-[#fdfbf7]/98 backdrop-blur-xl border-t border-black/5 border-b border-[#b08d57]/30 px-6 py-5 shadow-xl">
+          <nav className="flex flex-col gap-2" aria-label="Mobile Navigation">
+            {navLinks.map((link) => {
+              const isHome = link.name === "Home";
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={handleLinkClick}
+                  className={`font-serif py-3 text-base sm:text-lg tracking-wide border-b border-black/5 flex items-center justify-between text-[#2a1e17] transition-colors ${
+                    isHome
+                      ? "text-[#b08d57] font-semibold"
+                      : "hover:text-[#b08d57] font-medium"
+                  }`}
+                >
+                  <span>{link.name}</span>
+                  {isHome && (
+                    <span className="w-2 h-2 rounded-full bg-[#b08d57]" aria-hidden="true" />
+                  )}
+                </Link>
+              );
+            })}
           </nav>
+
+          {/* Quick Direct Contact Actions on Mobile */}
+          <div className="pt-3 mt-1 border-t border-[#b08d57]/20 flex flex-col gap-2">
+            <a
+              href="tel:+919203825265"
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-black/[0.03] border border-black/5 text-[#2a1e17] text-xs font-medium hover:bg-black/[0.06] transition-colors"
+            >
+              <span className="text-[#b08d57] uppercase tracking-wider text-[10px] font-semibold">Call Trade Desk</span>
+              <span className="font-semibold tracking-wide">+91 92038 25265</span>
+            </a>
+            <a
+              href="https://walink.me/6coh00"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-[#25D366]/15 border border-[#25D366]/30 text-[#128C7E] text-xs font-medium hover:bg-[#25D366]/25 transition-colors"
+            >
+              <span className="uppercase tracking-wider text-[10px] font-semibold">WhatsApp</span>
+              <span className="font-semibold">Chat on WhatsApp &rarr;</span>
+            </a>
+          </div>
         </div>
       )}
     </header>
