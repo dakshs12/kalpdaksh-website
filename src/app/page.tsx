@@ -16,31 +16,31 @@ export default function Home() {
       <main id="top" className="flex-1 w-full">
         {/* ---------- Full-Viewport Hero ---------- */}
         <section className="relative min-h-screen flex items-center bg-[#11100e] overflow-hidden pt-28 sm:pt-32 md:pt-36 pb-20">
-          {/* Hero background image */}
+          {/* Hero background image - pinned toward the right on larger screens to give maximum breathing room */}
           <div
-            className="absolute inset-0 bg-cover bg-[center_right_30%] md:bg-center"
+            className="absolute inset-0 bg-cover bg-[center_right_30%] sm:bg-[center_right_20%] md:bg-[center_right_10%] lg:bg-[right_center]"
             style={{
               backgroundImage: "url('/assets/hero.png')",
             }}
             aria-hidden="true"
           />
 
-          {/* Warm neutral scrim overlay (no navy blue tint) for high legibility while letting natural sunset and cotton tones shine */}
+          {/* Warm neutral scrim overlay (no navy blue tint) tailored to the left-aligned text area */}
           <div
-            className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/30 sm:from-black/75 sm:via-black/45 sm:to-transparent"
+            className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 sm:from-black/80 sm:via-black/40 sm:via-40% sm:to-transparent sm:to-65%"
             aria-hidden="true"
           />
 
-          {/* Hero Content */}
-          <div className="relative max-w-6xl mx-auto px-6 py-24 sm:py-32 w-full">
-            <div className="max-w-2xl">
+          {/* Hero Content - dynamically aligned to the left with responsive container padding */}
+          <div className="relative max-w-[1536px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20 py-20 sm:py-28 md:py-32 w-full">
+            <div className="max-w-lg lg:max-w-[32rem] xl:max-w-[36rem]">
               <p className="hero-kicker text-xs uppercase font-semibold tracking-[0.24em] text-[#d9bc8a] mb-5 drop-shadow-xs">
                 Cotton brokerage &amp; commission &middot; Indore, India
               </p>
-              <h1 className="hero-headline font-serif text-4xl sm:text-5xl md:text-6xl text-[#f6f1e8] font-semibold leading-[1.08] tracking-tight mb-6 drop-shadow-sm">
+              <h1 className="hero-headline font-serif text-4xl sm:text-5xl md:text-[3.25rem] lg:text-[3.5rem] text-[#f6f1e8] font-semibold leading-[1.1] tracking-tight mb-6 drop-shadow-sm text-balance">
                 Good cotton finds the right mill.
               </h1>
-              <p className="hero-explainer text-lg sm:text-xl text-[#f6f1e8]/90 font-light leading-relaxed max-w-xl mb-10 drop-shadow-xs">
+              <p className="hero-explainer text-base sm:text-lg lg:text-xl text-[#f6f1e8]/90 font-light leading-relaxed max-w-lg mb-10 drop-shadow-xs">
                 Kalpdaksh Commotrade Pvt Ltd is a cotton brokerage and
                 commission house in Indore, Madhya Pradesh, sourcing cotton for
                 leading mills and serving trade partners overseas.

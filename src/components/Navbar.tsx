@@ -37,7 +37,7 @@ export default function Navbar() {
           : "bg-transparent py-5 sm:py-6 md:py-7"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 flex items-center justify-between gap-6">
+      <div className="max-w-[1536px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20 flex items-center justify-between gap-6">
         {/* Full Brandmark Logo - Increased Size */}
         <Link
           href="#top"
