@@ -65,8 +65,7 @@ export default function Home() {
                 Who we are
               </p>
               <h2 className="font-serif text-3xl sm:text-4xl text-[#1f2a44] font-semibold leading-tight max-w-3xl mb-8">
-                A family-run cotton desk in the heart of India&rsquo;s cotton
-                country.
+                A family-run cotton brokerage in the heart of India.
               </h2>
             </div>
 
@@ -247,7 +246,7 @@ export default function Home() {
                 Four services, one accountable desk.
               </h2>
               <p className="text-[#3a4356] text-base leading-relaxed">
-                From daily cotton rate intelligence to fulfillment and delivery, we
+                From daily cotton rate intelligence to fulfilment and delivery, we
                 manage every step of the transaction with direct accountability.
               </p>
             </div>
@@ -272,7 +271,16 @@ export default function Home() {
                   >
                     WhatsApp
                   </a>{" "}
-                  and LinkedIn.
+                  and{" "}
+                  <a
+                    href="https://www.linkedin.com/company/kalpdaksh-commotrade-pvt-ltd/home/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#1f2a44] font-medium underline underline-offset-4 decoration-[#b08d57] hover:text-[#b08d57] transition-colors"
+                  >
+                    LinkedIn
+                  </a>
+                  .
                 </p>
               </article>
 
@@ -363,7 +371,7 @@ export default function Home() {
               </div>
 
               {/* Direct Contact Channels */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mb-8">
                 {/* Mobile / Direct Call */}
                 <a
                   href="tel:+919203825265"
@@ -405,6 +413,28 @@ export default function Home() {
                     </span>
                   </div>
                 </a>
+
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/company/kalpdaksh-commotrade-pvt-ltd/home/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-4 p-5 rounded-xl bg-white/5 border border-white/10 hover:border-[#0A66C2]/60 hover:bg-white/10 transition-all text-left"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-[#0A66C2]/20 border border-[#0A66C2]/40 flex items-center justify-center text-[#0A66C2] group-hover:scale-105 group-hover:bg-[#0A66C2] group-hover:text-white transition-all shrink-0">
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.76v8.37H6.46v-8.37M7.84 6.2a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z" />
+                    </svg>
+                  </div>
+                  <div className="min-w-0">
+                    <span className="block text-xs uppercase tracking-[0.18em] text-[#0A66C2] font-medium mb-1">
+                      Official LinkedIn
+                    </span>
+                    <span className="block font-serif text-lg sm:text-xl text-white font-semibold tracking-wide truncate">
+                      Company Profile &rarr;
+                    </span>
+                  </div>
+                </a>
               </div>
 
               <div className="pt-2">
@@ -442,6 +472,18 @@ export default function Home() {
               className="text-[#25D366] hover:text-[#3ce37c] transition-colors font-medium flex items-center gap-1.5"
             >
               <span>WhatsApp Desk &rarr;</span>
+            </a>
+            <span className="text-white/20 hidden sm:inline">&middot;</span>
+            <a
+              href="https://www.linkedin.com/company/kalpdaksh-commotrade-pvt-ltd/home/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#0A66C2] hover:text-[#378fe9] transition-colors font-medium flex items-center gap-1.5"
+            >
+              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.76v8.37H6.46v-8.37M7.84 6.2a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z" />
+              </svg>
+              <span>LinkedIn &rarr;</span>
             </a>
           </div>
         </div>
