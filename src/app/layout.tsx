@@ -18,9 +18,6 @@ export const metadata: Metadata = {
   title: "Kalpdaksh Commotrade Pvt Ltd · Cotton Brokerage, Indore",
   description:
     "Kalpdaksh Commotrade Pvt Ltd is a cotton brokerage and commission house in Indore, Madhya Pradesh, sourcing cotton for India's leading mills and serving trade partners overseas.",
-  icons: {
-    icon: "/assets/logo.png",
-  },
 };
 
 export default function RootLayout({
