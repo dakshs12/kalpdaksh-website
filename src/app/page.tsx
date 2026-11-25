@@ -346,7 +346,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Marquee Carousel Container (All 9 Mills in Continuous Row, 'and others' outside) */}
+          {/* Marquee Carousel Container (Mill & Trade Partner Logos in Continuous Row, 'and others' outside) */}
           <div className="reveal relative w-full">
             <MillsMarquee />
           </div>
