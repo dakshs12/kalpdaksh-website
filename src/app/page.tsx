@@ -220,7 +220,7 @@ export default function Home() {
               </p>
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-semibold leading-tight mb-6 drop-shadow-sm text-balance">
                 Direct from the heart of <br className="hidden sm:inline" />
-                India&rsquo;s cotton country.
+                India&rsquo;s cotton belt.
               </h2>
               <p className="text-[#f6f1e8] text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-5 drop-shadow-sm font-light">
                 From the fertile black-cotton soils of Madhya Pradesh, Gujarat, and Maharashtra,
