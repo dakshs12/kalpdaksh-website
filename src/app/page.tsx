@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import GSAPAnimations from "@/components/GSAPAnimations";
 import Navbar from "@/components/Navbar";
 import MillsMarquee from "@/components/MillsMarquee";
+import SmoothLink from "@/components/SmoothLink";
 
 export default function Home() {
   return (
@@ -47,12 +47,12 @@ export default function Home() {
                 market understanding.
               </p>
               <div>
-                <Link
+                <SmoothLink
                   href="#contact"
                   className="hero-cta inline-flex items-center justify-center bg-[#b08d57] hover:bg-[#c09b67] text-[#1a140e] font-semibold text-xs uppercase tracking-[0.14em] px-8 py-4 rounded transition-colors shadow-md hover:shadow-lg"
                 >
                   Get in touch
-                </Link>
+                </SmoothLink>
               </div>
             </div>
           </div>
@@ -475,7 +475,7 @@ export default function Home() {
           <div className="py-14 sm:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
             {/* Brand & Heritage Column */}
             <div className="lg:col-span-5">
-              <Link
+              <SmoothLink
                 href="#top"
                 className="inline-flex items-center bg-[#fdfbf7] rounded-xl px-4 py-2.5 border border-[#b08d57]/35 shadow-sm mb-5 hover:border-[#b08d57] transition-colors"
                 aria-label="Kalpdaksh Commotrade Home"
@@ -487,7 +487,7 @@ export default function Home() {
                   height={57}
                   className="h-10 w-auto object-contain"
                 />
-              </Link>
+              </SmoothLink>
               <p className="text-sm text-[#f6f1e8]/75 leading-relaxed max-w-sm mb-6">
                 A family-run cotton brokerage and commission house serving leading
                 spinning mills across India and trade partners overseas since 1970.
@@ -525,34 +525,34 @@ export default function Home() {
               </h3>
               <ul className="space-y-2.5 text-sm text-[#f6f1e8]/80">
                 <li>
-                  <Link href="#top" className="hover:text-[#d9bc8a] transition-colors">
+                  <SmoothLink href="#top" className="hover:text-[#d9bc8a] transition-colors">
                     Home
-                  </Link>
+                  </SmoothLink>
                 </li>
                 <li>
-                  <Link href="#about" className="hover:text-[#d9bc8a] transition-colors">
+                  <SmoothLink href="#about" className="hover:text-[#d9bc8a] transition-colors">
                     About Us
-                  </Link>
+                  </SmoothLink>
                 </li>
                 <li>
-                  <Link href="#heritage" className="hover:text-[#d9bc8a] transition-colors">
+                  <SmoothLink href="#heritage" className="hover:text-[#d9bc8a] transition-colors">
                     Heritage
-                  </Link>
+                  </SmoothLink>
                 </li>
                 <li>
-                  <Link href="#services" className="hover:text-[#d9bc8a] transition-colors">
+                  <SmoothLink href="#services" className="hover:text-[#d9bc8a] transition-colors">
                     Services
-                  </Link>
+                  </SmoothLink>
                 </li>
                 <li>
-                  <Link href="#mills" className="hover:text-[#d9bc8a] transition-colors">
+                  <SmoothLink href="#mills" className="hover:text-[#d9bc8a] transition-colors">
                     Mill Relationships
-                  </Link>
+                  </SmoothLink>
                 </li>
                 <li>
-                  <Link href="#contact" className="hover:text-[#d9bc8a] transition-colors">
+                  <SmoothLink href="#contact" className="hover:text-[#d9bc8a] transition-colors">
                     Contact Us
-                  </Link>
+                  </SmoothLink>
                 </li>
               </ul>
             </div>
@@ -594,12 +594,12 @@ export default function Home() {
               </div>
 
               <div className="mt-6">
-                <Link
+                <SmoothLink
                   href="#top"
                   className="inline-flex items-center justify-center border border-[#b08d57]/40 hover:border-[#d9bc8a] hover:bg-[#b08d57]/15 text-[#f6f1e8] text-xs uppercase font-medium tracking-[0.14em] px-4 py-2.5 rounded-lg transition-colors"
                 >
                   Back to top &uarr;
-                </Link>
+                </SmoothLink>
               </div>
             </div>
           </div>

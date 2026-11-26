@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import SmoothLink from "@/components/SmoothLink";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -50,7 +50,7 @@ export default function Navbar() {
           }`}
         >
           {/* Full Brandmark Logo */}
-          <Link
+          <SmoothLink
             href="#top"
             className="flex items-center text-white no-underline group shrink min-w-0"
             aria-label="Kalpdaksh Commotrade Home"
@@ -63,7 +63,7 @@ export default function Navbar() {
               className="h-9 sm:h-11 md:h-13 lg:h-14 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
               priority
             />
-          </Link>
+          </SmoothLink>
 
           {/* Desktop Nav Links - Smooth Underline Hover Animation on all links */}
           <nav
@@ -71,13 +71,13 @@ export default function Navbar() {
             aria-label="Main Navigation"
           >
             {navLinks.map((link) => (
-              <Link
+              <SmoothLink
                 key={link.name}
                 href={link.href}
                 className="relative font-serif text-base sm:text-lg lg:text-[18.5px] tracking-normal font-medium transition-all py-1.5 whitespace-nowrap text-[#2a1e17] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-[#b08d57] after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-out motion-reduce:after:transition-none"
               >
                 {link.name}
-              </Link>
+              </SmoothLink>
             ))}
           </nav>
 
@@ -108,14 +108,14 @@ export default function Navbar() {
           <div className="lg:hidden border-t border-[#b08d57]/20 px-5 sm:px-8 pt-2 pb-5 max-h-[calc(100vh-6rem)] overflow-y-auto">
             <nav className="flex flex-col space-y-1" aria-label="Mobile Navigation">
               {navLinks.map((link) => (
-                <Link
+                <SmoothLink
                   key={link.name}
                   href={link.href}
                   onClick={handleLinkClick}
                   className="group font-serif py-3.5 px-3 rounded-xl text-base sm:text-lg tracking-wide border-b border-[#b08d57]/15 last:border-b-0 flex items-center justify-between text-[#2a1e17] hover:text-[#b08d57] hover:bg-[#b08d57]/10 active:bg-[#b08d57]/15 font-medium transition-all"
                 >
                   <span>{link.name}</span>
-                </Link>
+                </SmoothLink>
               ))}
             </nav>
           </div>
