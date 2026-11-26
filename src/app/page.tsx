@@ -35,15 +35,16 @@ export default function Home() {
           <div className="relative max-w-[1536px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20 py-20 sm:py-28 md:py-32 w-full">
             <div className="max-w-lg lg:max-w-[32rem] xl:max-w-[36rem]">
               <p className="hero-kicker text-xs uppercase font-semibold tracking-[0.24em] text-[#d9bc8a] mb-5 drop-shadow-xs">
-                Cotton brokerage &amp; commission &middot; Indore, India
+                KALPDAKSH COMMOTRADE PVT. LTD.
               </p>
               <h1 className="hero-headline font-serif text-4xl sm:text-5xl md:text-[3.25rem] lg:text-[3.5rem] text-[#f6f1e8] font-semibold leading-[1.1] tracking-tight mb-6 drop-shadow-sm text-balance">
-                Good cotton finds the right mill.
+                Your Trusted Partner in Cotton Brokerage.
               </h1>
               <p className="hero-explainer text-base sm:text-lg lg:text-xl text-[#f6f1e8]/90 font-light leading-relaxed max-w-lg mb-10 drop-shadow-xs">
-                Kalpdaksh Commotrade Pvt Ltd is a cotton brokerage and
-                commission house in Indore, Madhya Pradesh, sourcing cotton for
-                leading mills and serving trade partners overseas.
+                With over 55 years of family legacy and
+                decades of brokerage experience, we connect cotton ginners, traders and
+                spinning mills through strong industry relationships and
+                market understanding.
               </p>
               <div>
                 <Link
@@ -60,54 +61,69 @@ export default function Home() {
         {/* ---------- About Section ---------- */}
         <section id="about" className="py-24 sm:py-28 bg-[#f6f1e8]">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="reveal">
-              <p className="text-xs uppercase font-semibold tracking-[0.24em] text-[#b08d57] mb-3">
-                Who we are
-              </p>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#1f2a44] font-semibold leading-tight max-w-3xl mb-8">
-                A family-run cotton brokerage in the heart of India.
-              </h2>
-            </div>
+            <div className="reveal grid grid-cols-1 lg:grid-cols-12 gap-14 sm:gap-16 lg:gap-20 xl:gap-24 items-center">
+              {/* Left Narrative Column */}
+              <div className="lg:col-span-7">
+                <h2 className="font-serif text-3xl sm:text-4xl text-[#1f2a44] font-semibold leading-tight max-w-2xl mb-8">
+                  An Established Business Built on Relationships
+                </h2>
 
-            <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-8 text-[#3a4356] text-base leading-relaxed mb-16">
-              <p>
-                Kalpdaksh Commotrade Pvt Ltd is a cotton brokerage and commission
-                house based in Indore, Madhya Pradesh. We broker cotton bales for
-                mills across India and handle import and export for trade partners
-                overseas.
-              </p>
-              <p>
-                Our work runs from daily market intelligence to negotiation,
-                handling and payment follow-through, so a deal is managed end to
-                end.
-              </p>
-            </div>
+                <div className="space-y-5 text-[#3a4356] text-base sm:text-[17px] leading-relaxed">
+                  <p>
+                    Kalpdaksh Commotrade Pvt. Ltd. is an Indore-based cotton
+                    brokerage company built on a family legacy spanning more
+                    than five decades.
+                  </p>
+                  <p>
+                    Our journey in the cotton industry began in 1971, with
+                    generations of experience developing an understanding of the
+                    market, its people and its business practices.
+                  </p>
+                  <p>
+                    Today, under the leadership of Rakesh Sethi, the company
+                    brings together this legacy with a contemporary approach to
+                    cotton brokerage.
+                  </p>
+                  <p>
+                    The firm brokers raw cotton bales for spinning and textile
+                    mills across Madhya Pradesh and Maharashtra, and handles
+                    import/export coordination for overseas trade partners. With
+                    an established network across Madhya Pradesh and Maharashtra
+                    and business relationships extending to major textile
+                    markets across India, it continues to connect industry
+                    participants through trust, transparency and consistent
+                    commitment.
+                  </p>
+                  <p className="border-l-2 border-[#b08d57] pl-5 text-[#1f2a44] font-medium pt-0.5">
+                    For us, brokerage is more than facilitating a transaction.
+                    It is about understanding people, recognising business
+                    requirements and building relationships that create value
+                    over time.
+                  </p>
+                </div>
+              </div>
 
-            {/* Three key stats */}
-            <div className="reveal pt-10 border-t border-[#1f2a44]/15 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6">
-              <div className="bg-white/60 p-6 rounded-lg border border-[#1f2a44]/10 shadow-xs">
-                <span className="block font-serif text-4xl sm:text-5xl font-semibold text-[#1f2a44] mb-1">
-                  1970
-                </span>
-                <span className="text-sm font-medium text-[#5f6b85]">
-                  family in cotton since
-                </span>
-              </div>
-              <div className="bg-white/60 p-6 rounded-lg border border-[#1f2a44]/10 shadow-xs">
-                <span className="block font-serif text-4xl sm:text-5xl font-semibold text-[#1f2a44] mb-1">
-                  2020
-                </span>
-                <span className="text-sm font-medium text-[#5f6b85]">
-                  incorporated as Kalpdaksh
-                </span>
-              </div>
-              <div className="bg-white/60 p-6 rounded-lg border border-[#1f2a44]/10 shadow-xs">
-                <span className="block font-serif text-4xl sm:text-5xl font-semibold text-[#1f2a44] mb-1">
-                  Indore
-                </span>
-                <span className="text-sm font-medium text-[#5f6b85]">
-                  Madhya Pradesh
-                </span>
+              {/* Right Circular Heritage Crest */}
+              <div className="lg:col-span-5 flex flex-col items-center justify-center">
+                <div className="relative flex items-center justify-center p-5 sm:p-7">
+                  <div
+                    className="absolute inset-0 rounded-full border border-[#b08d57]/25"
+                    aria-hidden="true"
+                  />
+                  <div
+                    className="absolute inset-3 rounded-full border border-dashed border-[#b08d57]/25"
+                    aria-hidden="true"
+                  />
+                  <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full bg-[#fdfbf7]/90 p-3 shadow-sm border border-[#b08d57]/20 flex items-center justify-center">
+                    <Image
+                      src="/assets/logo.png"
+                      alt="Kalpdaksh Commotrade Pvt. Ltd. Official Emblem"
+                      width={360}
+                      height={360}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -134,17 +150,17 @@ export default function Home() {
           />
 
           <div className="relative max-w-6xl mx-auto px-6">
-            <div className="reveal max-w-2xl mb-12">
-              <p className="text-xs uppercase font-semibold tracking-[0.24em] text-[#d9bc8a] mb-3">
-                Heritage
-              </p>
+            <div className="reveal max-w-3xl mb-12">
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#f6f1e8] font-semibold leading-tight mb-6">
-                A family in cotton since 1970.
+                Cotton brokerage services dating back to 1970.
               </h2>
               <p className="text-base sm:text-lg text-[#f6f1e8]/90 leading-relaxed">
-                Our family entered the cotton trade in 1970. The next generation
-                joined in 1996, and in 2020 the business took its current form as
-                Kalpdaksh Commotrade Pvt Ltd.
+                Rakesh Sethi, the Managing Director of Kalpdaksh
+                Commotrade Pvt Ltd, brings over 30 years of experience in the
+                cotton industry. Incorporated as a private limited entity in
+                2020, the business is built on a 50+ year family legacy in
+                cotton brokerage dating back to 1970 (previously operating as
+                Nirmal Kumar Rakesh Kumar Sethi).
               </p>
             </div>
 
@@ -158,8 +174,8 @@ export default function Home() {
                   1970
                 </h3>
                 <p className="text-sm text-[#f6f1e8]/80 leading-normal">
-                  Family entered the cotton trade, establishing relationships
-                  across Central India’s prime cotton-producing tracts.
+                  Shree Nirmal Kumar ji Sethi entered cotton brokerage, building
+                  new relationships within the cotton industry.
                 </p>
               </div>
 
@@ -171,8 +187,8 @@ export default function Home() {
                   1996
                 </h3>
                 <p className="text-sm text-[#f6f1e8]/80 leading-normal">
-                  Next generation joined the desk, expanding coverage into
-                  national spinning mill networks and cross-border trade flows.
+                  Mr. Rakesh Sethi joined the business, expanding into
+                  spinning mills across India and cross-border trade flows.
                 </p>
               </div>
 
@@ -358,27 +374,13 @@ export default function Home() {
           className="relative z-20 py-20 sm:py-24 bg-[#f6f1e8] border-t border-[#b08d57]/20 text-[#2a1e17]"
         >
           <div className="max-w-6xl mx-auto px-6">
-            <div className="reveal grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-              {/* Left Editorial Intro */}
+            <div className="reveal grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              {/* Left Heading */}
               <div className="lg:col-span-5">
-                <p className="text-xs uppercase font-semibold tracking-[0.24em] text-[#8c6a38] mb-3">
-                  Get in touch
-                </p>
-                <h2 className="font-serif text-3xl sm:text-4xl text-[#2a1e17] font-semibold leading-tight mb-4">
-                  Direct brokerage, handled from Indore.
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.65rem] text-[#2a1e17] font-semibold tracking-tight leading-tight">
+                  GET IN TOUCH
                 </h2>
-                <p className="text-[#4a3b32] text-base leading-relaxed mb-6">
-                  Reach our trade desk directly for daily cotton market rates,
-                  mill procurement inquiries, and import/export execution.
-                </p>
-                <div className="pt-5 border-t border-[#b08d57]/25">
-                  <p className="font-serif text-base font-semibold text-[#2a1e17]">
-                    Kalpdaksh Commotrade Pvt Ltd
-                  </p>
-                  <p className="text-sm text-[#5c4b40] mt-0.5">
-                    Indore, Madhya Pradesh, India
-                  </p>
-                </div>
+                <div className="w-12 h-0.5 bg-[#b08d57] mt-4" aria-hidden="true" />
               </div>
 
               {/* Right Direct Channels */}
@@ -396,7 +398,7 @@ export default function Home() {
                     </div>
                     <div className="min-w-0">
                       <span className="block text-[11px] uppercase tracking-[0.16em] text-[#8c6a38] font-semibold mb-0.5">
-                        Direct Mobile / Trade Desk
+                        CALL US
                       </span>
                       <span className="block font-serif text-lg sm:text-xl text-[#2a1e17] font-semibold tracking-wide">
                         +91 92038 25265
@@ -423,7 +425,7 @@ export default function Home() {
                     </div>
                     <div className="min-w-0">
                       <span className="block text-[11px] uppercase tracking-[0.16em] text-[#15803d] font-semibold mb-0.5">
-                        WhatsApp Direct Desk
+                        WhatsApp
                       </span>
                       <span className="block font-serif text-lg sm:text-xl text-[#2a1e17] font-semibold tracking-wide">
                         Chat on WhatsApp
@@ -450,7 +452,7 @@ export default function Home() {
                     </div>
                     <div className="min-w-0">
                       <span className="block text-[11px] uppercase tracking-[0.16em] text-[#0A66C2] font-semibold mb-0.5">
-                        Official LinkedIn
+                        CONNECT ON LINKEDIN
                       </span>
                       <span className="block font-serif text-lg sm:text-xl text-[#2a1e17] font-semibold tracking-wide">
                         Kalpdaksh Commotrade Pvt Ltd
@@ -579,7 +581,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="block text-[#4ade80] hover:text-[#86efac] transition-colors font-medium"
                 >
-                  WhatsApp Direct Desk &rarr;
+                  WhatsApp &rarr;
                 </a>
                 <a
                   href="https://www.linkedin.com/company/kalpdaksh-commotrade-pvt-ltd/home/"
