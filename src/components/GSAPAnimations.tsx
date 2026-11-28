@@ -53,9 +53,12 @@ export default function GSAPAnimations() {
         },
       });
 
-      // 3. Origin & Fiber Sourcing: CottonConnect-style pinned scroll moment
-      if (document.querySelector("#origin")) {
-        // Pin the cotton section so the next section (#services) slides up over it
+      // 3. Origin & Fiber Sourcing: CottonConnect-style pinned scroll moment (desktop/tablet >= 768px only)
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 768px)", () => {
+        if (!document.querySelector("#origin")) return;
+
+        // Pin the cotton section on larger screens so #services slides over it
         ScrollTrigger.create({
           trigger: "#origin",
           start: "top top",
@@ -94,7 +97,7 @@ export default function GSAPAnimations() {
             { opacity: 0.8, ease: "none" },
             0
           );
-      }
+      });
 
       // 4. Subtle reveals on scroll for content sections
       const reveals = gsap.utils.toArray<HTMLElement>(".reveal");

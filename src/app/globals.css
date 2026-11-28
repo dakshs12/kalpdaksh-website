@@ -85,13 +85,19 @@ footer {
   opacity: 0;
 }
 
-/* ---------- Continuous Marquee Carousel ---------- */
+@media (max-width: 767px) {
+  .origin-overlay {
+    opacity: 0.72;
+  }
+}
+
+/* ---------- Continuous Dual-Row Marquee Carousel ---------- */
 @keyframes marquee-scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-25%);
   }
 }
 
@@ -100,12 +106,13 @@ footer {
   position: relative;
   width: 100%;
   touch-action: pan-x;
+  overscroll-behavior-x: contain;
 }
 
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 40s linear infinite;
+  animation: marquee-scroll 22s linear infinite;
   will-change: transform;
 }
 
@@ -183,7 +190,7 @@ footer {
   }
   @media (min-width: 1024px) {
     .marquee-group:not(.marquee-duplicate) {
-      grid-template-columns: repeat(5, 1fr) !important;
+      grid-template-columns: repeat(6, 1fr) !important;
     }
   }
   .marquee-duplicate {
