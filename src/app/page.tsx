@@ -34,7 +34,7 @@ export default function Home() {
           {/* Hero Content - dynamically aligned to the left with responsive container padding */}
           <div className="relative max-w-[1536px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20 py-20 sm:py-28 md:py-32 w-full">
             <div className="max-w-lg lg:max-w-[32rem] xl:max-w-[36rem]">
-              <p className="hero-kicker text-xs uppercase font-semibold tracking-[0.24em] text-[#d9bc8a] mb-5 drop-shadow-xs">
+              <p className="hero-kicker text-[13px] sm:text-[15px] lg:text-base uppercase font-semibold tracking-[0.18em] sm:tracking-[0.22em] text-[#d9bc8a] mb-5 drop-shadow-xs">
                 KALPDAKSH COMMOTRADE PVT. LTD.
               </p>
               <h1 className="hero-headline font-serif text-4xl sm:text-5xl md:text-[3.25rem] lg:text-[3.5rem] text-[#f6f1e8] font-semibold leading-[1.1] tracking-tight mb-6 drop-shadow-sm text-balance">
@@ -68,16 +68,14 @@ export default function Home() {
                   An Established Business Built on Relationships
                 </h2>
 
-                <div className="space-y-5 text-[#3a4356] text-base sm:text-[17px] leading-relaxed">
+                <div className="space-y-5 text-[#3a4356] text-base sm:text-[17px] leading-relaxed text-justify">
                   <p>
                     Kalpdaksh Commotrade Pvt. Ltd. is an Indore-based cotton
                     brokerage company built on a family legacy spanning more
-                    than five decades.
-                  </p>
-                  <p>
-                    Our journey in the cotton industry began in 1971, with
-                    generations of experience developing an understanding of the
-                    market, its people and its business practices.
+                    than five decades. Our journey in the cotton industry began
+                    in 1970, with generations of experience developing an
+                    understanding of the market, its people and its business
+                    practices.
                   </p>
                   <p>
                     Today, under the leadership of Rakesh Sethi, the company
@@ -154,7 +152,7 @@ export default function Home() {
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#f6f1e8] font-semibold leading-tight mb-6">
                 Cotton brokerage services dating back to 1970.
               </h2>
-              <p className="text-base sm:text-lg text-[#f6f1e8]/90 leading-relaxed">
+              <p className="text-base sm:text-lg text-[#f6f1e8]/90 leading-relaxed text-justify">
                 Rakesh Sethi, the Managing Director of Kalpdaksh
                 Commotrade Pvt Ltd, brings over 30 years of experience in the
                 cotton industry. Incorporated as a private limited entity in
